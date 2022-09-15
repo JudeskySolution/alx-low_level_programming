@@ -7,7 +7,7 @@
 *Return: 1 weather it is, 0 otherwise
 */
 
-int _isuppercase(int c)
+int _isupper(int c)
 {
 	if ((c >= 'A') && (c <= 'Z'))
 	{
