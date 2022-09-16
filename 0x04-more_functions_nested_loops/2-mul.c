@@ -1,13 +1,13 @@
 #include "main.h"
 
 /**
-*nul - multiplies two numbers
+*mul - multiplies two numbers
 *@a: first number
 *@b: second number
 *Return: retuns result
 */
 
-int nul(int a, int b)
+int mul(int a, int b)
 {
 	return (a * b);
 }
