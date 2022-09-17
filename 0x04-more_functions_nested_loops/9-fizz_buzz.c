@@ -23,7 +23,6 @@ int main(void)
 		else if ((num % 3) == 0)
 		{
 			printf("Fizz ");
-			B
 		}
 		else if ((num % 5) == 0)
 		{
