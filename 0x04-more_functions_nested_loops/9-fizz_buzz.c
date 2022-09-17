@@ -3,9 +3,7 @@
 
 /**
 *main - program that prints either number
-*or Fizz or Buzz or Fizzbuzz
-*
-*
+*or fizz or buzz or fizzbuzz
 *Return: returns 0
 */
 
@@ -36,10 +34,10 @@ int main(void)
 		}
 		else
 		{
-			printf("%d ", num);
+			printf("%d", num);
 		}
 	}
-	putchar('\n');
+	printf("\n");
 
 	return (0);
 }
