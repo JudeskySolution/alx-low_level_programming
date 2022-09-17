@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+
 /**
 *main - program that prints either number
 *or Fizz or Buzz or Fizzbuzz
@@ -38,7 +39,7 @@ int main(void)
 			printf("%d ", num);
 		}
 	}
-	printf("\n");
+	putchar('\n');
 
 	return (0);
 }
