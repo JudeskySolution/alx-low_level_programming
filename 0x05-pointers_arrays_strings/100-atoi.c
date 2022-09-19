@@ -22,19 +22,19 @@ int _atoi(char *s)
 	while (*(s + index) != '\0')
 	{
 		now = *(s + index);
-		if (now == '_)
+		if (now == '_')
 		{
 			sign *= -1;
 		}
-		if (niw >= '0' && now <= '9')
+		if (now >= '0' && now <= '9')
 		{
 			ind2 = index;
 			while (*(s + ind2) > 47
 && *(s + ind2) < 58)
 			{
-				res = (rez * 10
+				res = (res * 10
 ) + *(s + ind2) - '0';
-				index2++;
+				ind2++;
 			}
 			break;
 		}
@@ -42,5 +42,5 @@ int _atoi(char *s)
 	}
 	if (sign < 0)
 		res *= sign;
-	return (res)
+	return (res);
 }
