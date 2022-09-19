@@ -1,14 +1,14 @@
 #include "main.h"
 
 /**
- * puts - prints every other character of a given
+ * puts2 - prints every other character of a given
  * string
  * @str: passed string pointer
  *
  * Return: void
  */
 
-void puts(char *str)
+void puts2(char *str)
 {
 	int i = 0;
 
