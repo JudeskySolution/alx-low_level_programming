@@ -1,4 +1,4 @@
-#include "msun.h"
+#include "main.h"
 
 /**
  * *_strcpy - copies string to given memory location
