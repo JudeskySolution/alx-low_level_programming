@@ -1,4 +1,4 @@
-#include "msin.h"
+#include "main.h"
 
 /**
  * puts - prints every other character of a given
