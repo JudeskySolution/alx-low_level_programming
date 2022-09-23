@@ -1,11 +1,4 @@
 #include <stdio.h>
-/**
- * main - Entry point
- *
- * Description: magic
- *
- * Return: Always 0 (Success)
- */
 int main(void)
 {
 	int n;
