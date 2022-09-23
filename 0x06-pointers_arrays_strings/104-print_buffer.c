@@ -2,18 +2,29 @@
 #include <stdio.h>
 
 /**
- * main - check the code
+ * print_buffer - prints a buffer
+ * @b: buffer to print
+ * @size: size of buffer
  *
- * Return: Always 0.
+ * Return: void
  */
-int main(void)
+void print_buffer(char *b, int size)
 {
-char buffer[] = "This is a string!\0And this is the rest of the #buffer :)
-	    \1\2\3\4\5\6\7#cisfun\n\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\
-	    x20\x21\x34\x56#pointersarefun #infernumisfun\n";
+	int i;
 
-printf("%s\n", buffer);
-printf("---------------------------------\n");
-print_buffer(buffer, sizeof(buffer));
-return (0);
+	for (i = 0; i <= (size - 1) / 10 && size; i++)
+	{
+		printf("%08x: ", i * 10);
+		if (i < size / 10)
+		{
+			print_line(b, 9, i);
+		}
+		else
+		{
+			print_line(b, size % 10 - 1, i);
+		}
+		putchar('\n');
+	}
+	if (size == 0)
+		putchar('\n');
 }
