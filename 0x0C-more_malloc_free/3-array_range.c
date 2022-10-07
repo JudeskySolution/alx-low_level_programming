@@ -1,40 +1,26 @@
 #include <stdlib.h>
 
 /**
- * **alloc_grid - dynamically create 2d array and initialize each element to 0
- * @width: no. of columns
- * @height: no. of rows
+ * *array_range - creates an array of integers and stores numbers min to max,
+ * both inclusive in the array
+ * @min: smallest number to be stored
+ * @max: largest number to be stored
  *
- * Return: pointer to the 2d array or NULL if failure occurs
+ * Return: pointer to the newly created array on success,
+ * else NULL if min > max or if malloc fails
  */
-int **alloc_grid(int width, int height)
+int *array_range(int min, int max)
 {
-	int **a;
-	int index, i, j;
+	int *arr;
+	int len, num, index;
 
-	if (width <= 0 || height <= 0)
+	if (min > max)
 		return (0);
-	a = (int **)malloc(sizeof(int *) * height);
-	if (a == 0)
-	{
-		free(a);
+	len = (max - min) + 1;
+	arr = malloc(sizeof(int) * len);
+	if (arr == 0)
 		return (0);
-	}
-	for (index = 0; index < height; index++)
-	{
-		*(a + index) = (int *)malloc(sizeof(int) * width);
-		if (*(a + index) == 0)
-		{
-			for (i = 0; i < index; i++)
-				free(*(a + i));
-			free(a);
-			return (0);
-		}
-	}
-	for (i = 0; i < height; i++)
-	{
-		for (j = 0; j < width; j++)
-			*(*(a + i) + j) = 0;
-	}
-	return (a);
+	for (num = min, index = 0; num <= max; index++, num++)
+		*(arr + index) = num;
+	return (arr);
 }
