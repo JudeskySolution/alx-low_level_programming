@@ -1,60 +1,82 @@
 #include "dog.h"
-#include <stdio.h>
-
+#include <stdlib.h>
+int _strlen(char *s);
+char *_strcpy(char *dest, char *src);
 /**
- * new_dog - new element of type struct dog
- *
- * @name: name of new dog
- * @age: age of new dog
- * @owner: owner of new dog
- * Return: new struct dog
- */
+ * new_dog - function
+ * @name: name of dog
+ * @age: age of new doggo
+ * @owner: owner of new doggo
+ * Description: function to create a new dog. Store copy of name & owner
+ * Return: ptr, null if fail
+*/
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *new_dog;
-	char *dog_name, *dog_owner;
+	char *nename, *neowner;
 
-	new_dog = malloc(sizeof(dog_t));
-	if (new_dog == NULL)
-		return (new_dog);
-	dog_name = malloc(sizeof(name));
-		if (dog_name == NULL)
-		{
-			free(new_dog);
-			return (NULL);
-		}
-	dog_owner = malloc(sizeof(owner));
-	if (dog_owner == NULL)
+	int lename, leowner;
+
+	dog_t *doggo = malloc(sizeof(dog_t));
+
+	if (doggo == NULL)
+		return (NULL);
+	_strlen(name);
+	lename = _strlen(name);
+	nename = malloc((lename + 1) * sizeof(char));
+	if (nename == NULL)
 	{
-		free(dog_name);
-		free(new_dog);
+		free(doggo);
 		return (NULL);
 	}
-	_strcpy(dog_name, name);
-	_strcpy(dog_owner, owner);
-	new_dog->name = dog_name;
-	new_dog->owner = dog_owner;
-	new_dog->age = age;
-	return (new_dog);
+	_strcpy(nename, name);
+	_strlen(owner);
+	leowner = _strlen(owner);
+	neowner = malloc((leowner + 1) * sizeof(char));
+	if (neowner == NULL)
+	{
+		free(nename);
+		free(doggo);
+		return (NULL);
+	}
+	_strcpy(neowner, owner);
+	doggo->name = nename;
+	doggo->age = age;
+	doggo->owner = neowner;
+	return (doggo);
 }
-
 /**
- * *_strcpy - copies string to given memory location
- * @dest: where the string needs to be copied
- * @src: where the string is
- *
+ * _strlen - function
+ * @s: first operand & pointer
+ * Description: function that returns the length of a string
+ * Return: Always 0
+*/
+int _strlen(char *s)
+{
+	int index = 0;
+
+	while (*s != '\0')
+	{
+		index++;
+		s++;
+	}
+	return (index);
+}
+/**
+ * _strcpy - function
+ * @src: copy from
+ * @dest: copy to
+ * Description: copies strng pnted by src to dest with null
  * Return: char
- */
+*/
 char *_strcpy(char *dest, char *src)
 {
-	int len = 0;
+	int i;
 
-	while (*(src + len) != '\0')
+	for (i = 0; src[i]; i++)
 	{
-		*(dest + len) = *(src + len);
-		len++;
+		dest[i] = src[i];
 	}
-	*(dest + len) = *(src + len);
-
+	dest[i] = '\0';
 	return (dest);
+
 }
