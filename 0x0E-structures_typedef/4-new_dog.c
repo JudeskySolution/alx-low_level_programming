@@ -1,5 +1,5 @@
-#include <stdlib.h>
 #include "dog.h"
+#include <stdlib.h>
 
 /**
  * new_dog - new element of type struct dog
@@ -57,3 +57,4 @@ char *_strcpy(char *dest, char *src)
 	*(dest + len) = *(src + len);
 
 	return (dest);
+}
