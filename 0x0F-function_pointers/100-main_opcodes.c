@@ -10,7 +10,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int i, (a)(int, char *) = main;
+	int i, (*a)(int, char **) = main;
 
 	if (argc != 2)
 	{
